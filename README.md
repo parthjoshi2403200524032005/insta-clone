@@ -82,3 +82,4 @@ This project is a practice exercise for building an Instagram clone using ReactJ
 10. **Notifications**
     - Fetch and display notifications
 
+npm create vite@latest . -- --template react
