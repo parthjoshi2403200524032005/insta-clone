@@ -4,14 +4,16 @@ import ButtonLayout from '../../layouts/ButtonLayout'
 
 function CreatePost() {
   return (
-    <ButtonLayout>
+    <SimpleLayout>
+    {/* // <ButtonLayout> */}
     {/* <ButtonLayout> */}
       <div>
         <h1>Create Post</h1>
         <p>This is the create post screen.</p>
       </div>
     {/* </ButtonLayout> */}
-    </ButtonLayout>
+    {/* // </ButtonLayout> */}
+    </SimpleLayout>
   )
 }
 

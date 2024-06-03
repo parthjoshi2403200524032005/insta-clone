@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export const ButtonLayout = ({ children1 }) => {
+ const ButtonLayout = ({ children1 }) => {
   return (
     <div>
       <header>
-        <h1>Simple Layout</h1>
+        <h1>ButtonLayout</h1>
       </header>
       <main>
         <div style={{
@@ -39,3 +39,5 @@ export const ButtonLayout = ({ children1 }) => {
     </div>
   )
 }
+
+export default ButtonLayout

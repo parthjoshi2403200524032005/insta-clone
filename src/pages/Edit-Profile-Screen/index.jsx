@@ -3,14 +3,16 @@ import { SimpleLayout } from '../../layouts/SimpleLayout'
 import ButtonLayout from '../../layouts/ButtonLayout'
 function EditProfile() {
   return (
-    <ButtonLayout>
+    // <ButtonLayout>
+
+    <SimpleLayout>
       <div>
         <h1>Edit Profile</h1>
         <p>This is the edit profile screen.</p>
       </div>
-    </ButtonLayout>
-
-  )
+    {/* </ButtonLayout> */}
+    </SimpleLayout>
+    )
 }
 
 export default EditProfile
