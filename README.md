@@ -83,3 +83,23 @@ This project is a practice exercise for building an Instagram clone using ReactJ
     - Fetch and display notifications
 
 npm create vite@latest . -- --template react
+
+
+  <!-- pascal case: First letter of every word in capitals
+  example: WaterInTheOcean
+  Standard usage: Class names, interfaces, file names
+ 
+  camel case: first wrd small, other word first character is capital
+  example: waterInTheOcean
+  Std usage: variable names/ object names, properties, function name
+ 
+  snake case: every char is small. space denoted by _
+  example: water_in_the_ocean
+ 
+  sentense case:
+  example: Water in the ocean
+ 
+  kebab case: every char is small. space denoted by -
+  example: water-in-the-ocean, /all-users
+  std usage: file names, rest api path -->
+

@@ -5,7 +5,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 function Login() {
   return (
-    // <SimpleLayout>
     <div>
       <main className='	border-2 rounded p-10  mt-2 bg-white text-black shadow-md	' >
         <div className=''>
