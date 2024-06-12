@@ -21,6 +21,7 @@ export const SimpleLayout = ({ children }) => {
               <li><Link to="/search">Search</Link></li>
               <li><Link to="/notification">Notifications</Link></li>
               <li><Link to="/login">Login</Link></li>
+               <li><Link to="/user">User</Link></li>
               <li><Link to="/signup">Signup</Link></li>
               <li><Link to="/edit-profile">EditProfile</Link></li>
               <li><Link to="/post-details">PostDetails</Link></li>

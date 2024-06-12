@@ -10,6 +10,7 @@ import SignUp from "./pages/Signup-Screen";
 import Notification from "./pages/Notifications-Screen";
 import './App.css';
 import HomeFeed from "./pages/Home-Feed";
+import SignupScreen from "./pages/Signup-Screen";
 
 const App = () => {
   return(
@@ -22,7 +23,8 @@ const App = () => {
       <Route path="/post-details" element={<PostDetails />} />
       <Route path="/create-post" element={<CreatePost />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/signup" element={<SignUp />} />
+      {/* <Route path="/login" element={< />} /> */}
+      <Route path="/signup" element={<SignupScreen />} />
       <Route path="/notification" element={<Notification />} />
     </Routes>
   </Router>

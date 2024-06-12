@@ -1,10 +1,4 @@
-// import React from 'react'
+import {atom } from 'jotai'
 
-// function User() {
-//   alert('hello')
-//   return (<>
-//   </>
-//   )
-// }
 
-// export default User
+export const userAtom = atom([])
