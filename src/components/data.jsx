@@ -7,7 +7,7 @@ function Data() {
 
     return (
         <SimpleLayout>
-            <p>{JSON.stringify(user)}</p>
+            <p> { JSON.stringify(user)}</p>
         </SimpleLayout>
         // <div>   
         //     <p>{JSON.stringify(user)}</p>

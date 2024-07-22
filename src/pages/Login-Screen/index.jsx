@@ -1,19 +1,34 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { SimpleLayout } from "../../layouts/SimpleLayout";
 import { Link } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+
 const validationSchema = Yup.object().shape({
   password: Yup.string().required("Password is required"),
   email: Yup.string().required("Email is required"),
 });
+
 function LoginScreen(props) {
+  const [savedUser, setSavedUser] = useState(null);
+
+  useEffect(() => {
+    const userData = localStorage.getItem('user');
+    if (userData) {
+      setSavedUser(JSON.parse(userData));
+    }
+  }, []);
+
   const loginUserForm = useFormik({
     initialValues: {
-      password: "",
-      email: "",
+      email: savedUser ? savedUser.email : "",
+      password: savedUser ? savedUser.password : "",
     },
     onSubmit: (values) => {
+      // Save the login data to local storage
+      localStorage.setItem('user', JSON.stringify(values));
+
+      // Call the loginUser function passed via props
       props.loginUser(values);
       loginUserForm.resetForm();
     },
@@ -23,13 +38,12 @@ function LoginScreen(props) {
   return (
     <SimpleLayout>
       <form onSubmit={loginUserForm.handleSubmit}>
-        <div className="	border-2 rounded p-10  mt-2 bg-white text-black shadow-md	">
+        <div className="border-2 rounded p-10 mt-2 bg-white text-black shadow-md">
           <h1 className="p-8">Instagram</h1>
           <input
             id="email"
             name="email"
             type="text"
-            // placeholder="Email"
             placeholder="Phone number, username, or email address"
             className="border-2 rounded p-2 md:p-2 mt-2 bg-white text-black w-full shadow-md text-sm"
             onChange={loginUserForm.handleChange}
@@ -54,7 +68,7 @@ function LoginScreen(props) {
           ) : null}
           <button
             type="submit"
-            className="bg-sky-400	 hover:bg-red-400 text-white font-bold py-1 px-4 rounded-lg w-full my-3 " 
+            className="bg-sky-400 hover:bg-red-400 text-white font-bold py-1 px-4 rounded-lg w-full my-3"
           >
             Login
           </button>
@@ -63,14 +77,13 @@ function LoginScreen(props) {
             <div className="ml-0.5">OR</div>
             <div className="w-1/2 m-2 h-0.5 bg-slate-300"></div>
           </section>
-          <div className="mt-2text-black">
+          <div className="mt-2 text-black">
             <Link to="https://bit.ly/3RcM2ve">Log in with Facebook</Link>
           </div>
-          <div className="mt-4 text-gray-400 text-xs ">
-            {" "}
+          <div className="mt-4 text-gray-400 text-xs">
             <Link to="https://bit.ly/4c2r0Hy" className="text-black">
-              Forgot Password?{" "}
-            </Link>{" "}
+              Forgot Password?
+            </Link>
           </div>
         </div>
         <section>
@@ -87,4 +100,3 @@ function LoginScreen(props) {
 }
 
 export default LoginScreen;
-
