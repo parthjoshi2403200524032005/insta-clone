@@ -80,7 +80,7 @@ function LoginScreen(props) {
           <div className="mt-2 text-black">
             <Link to="https://bit.ly/3RcM2ve">Log in with Facebook</Link>
           </div>
-          <div className="mt-4 text-gray-400 text-xs">
+          <div className="mt-4 text-gray-400 text-xs"> 
             <Link to="https://bit.ly/4c2r0Hy" className="text-black">
               Forgot Password?
             </Link>
