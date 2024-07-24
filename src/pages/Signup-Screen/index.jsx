@@ -26,7 +26,7 @@ function SignupScreen(props) {
   });
   return (
     <SimpleLayout>
-      <form onSubmit={signupUserForm.handleSubmit}>
+      <form onSubmit={signupUserForm.handleSubmit} className=" ml-[400px] mt-[80px] text-center">
         <div className="border-2 rounded p-10  mt-2 bg-white text-black shadow-md">
           <h1 className="p-8">Instagram</h1>
           <p className="p-2 font-mono text-gray-500" >

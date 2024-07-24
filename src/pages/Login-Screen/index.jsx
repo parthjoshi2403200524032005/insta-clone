@@ -37,8 +37,8 @@ function LoginScreen(props) {
 
   return (
     <SimpleLayout>
-      <form onSubmit={loginUserForm.handleSubmit}>
-        <div className="border-2 rounded p-10 mt-2 bg-white text-black shadow-md">
+      <form onSubmit={loginUserForm.handleSubmit} className=" text-center ml-[450px] mt-[200px]">
+        <div className="border-2 rounded p-10 mt-2 bg-white text-black shadow-md ">
           <h1 className="p-8">Instagram</h1>
           <input
             id="email"

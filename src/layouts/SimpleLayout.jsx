@@ -219,13 +219,10 @@ export const SimpleLayout = ({ children }) => {
           </div>
           <div
             style={{
-              // display: "flex",
+             
                margin: "0px 0px 0px 0px",
               justifyContent: "space-evenly",
-              // flexDirection: "column",
-              // flex: 1,
-              // marginBlockStart: "50px",
-              // padding: "20px",
+            
             }}
           >
             {children}
