@@ -37,38 +37,42 @@ function LoginScreen(props) {
 
   return (
     <SimpleLayout>
-      <form onSubmit={loginUserForm.handleSubmit} className=" text-center ml-[450px] mt-[200px]">
-        <div className="border-2 rounded p-10 mt-2 bg-white text-black shadow-md ">
+      <form onSubmit={loginUserForm.handleSubmit} className="text-center ml-[450px] mt-[200px]">
+        <div className="border-2 rounded p-10 mt-2 bg-white text-black shadow-md w-[450px] h-[400px]">
           <h1 className="p-8">Instagram</h1>
-          <input
-            id="email"
-            name="email"
-            type="text"
-            placeholder="Phone number, username, or email address"
-            className="border-2 rounded p-2 md:p-2 mt-2 bg-white text-black w-full shadow-md text-sm"
-            onChange={loginUserForm.handleChange}
-            onBlur={loginUserForm.handleBlur}
-            value={loginUserForm.values.email}
-          />
-          {loginUserForm.touched.email && loginUserForm.errors.email ? (
-            <div>{loginUserForm.errors.email}</div>
-          ) : null}
-          <input
-            id="password"
-            name="password"
-            type="password"
-            placeholder="Password"
-            className="border-2 rounded p-2 md:p-2 mt-2 bg-white text-black w-full shadow-md text-sm"
-            onChange={loginUserForm.handleChange}
-            onBlur={loginUserForm.handleBlur}
-            value={loginUserForm.values.password}
-          />
-          {loginUserForm.touched.password && loginUserForm.errors.password ? (
-            <div>{loginUserForm.errors.password}</div>
-          ) : null}
+          <div className="relative">
+            <input
+              id="email"
+              name="email"
+              type="text"
+              placeholder="Phone number, username, or email address"
+              className={`border-2 rounded p-2 md:p-2 mt-2 bg-white text-black w-full shadow-md text-sm ${loginUserForm.touched.email && loginUserForm.errors.email ? 'border-red-500' : ''}`}
+              onChange={loginUserForm.handleChange}
+              onBlur={loginUserForm.handleBlur}
+              value={loginUserForm.values.email}
+            />
+            {loginUserForm.touched.email && loginUserForm.errors.email ? (
+              <div className="absolute text-red-500 text-xs mt-1">{loginUserForm.errors.email}</div>
+            ) : null}
+          </div>
+          <div className="relative mt-4">
+            <input
+              id="password"
+              name="password"
+              type="password"
+              placeholder="Password"
+              className={`border-2 rounded p-2 md:p-2 mt-2 bg-white text-black w-full shadow-md text-sm ${loginUserForm.touched.password && loginUserForm.errors.password ? 'border-red-500' : ''}`}
+              onChange={loginUserForm.handleChange}
+              onBlur={loginUserForm.handleBlur}
+              value={loginUserForm.values.password}
+            />
+            {loginUserForm.touched.password && loginUserForm.errors.password ? (
+              <div className="absolute text-red-500 text-xs mt-1">{loginUserForm.errors.password}</div>
+            ) : null}
+          </div>
           <button
             type="submit"
-            className="bg-sky-400 hover:bg-red-400 text-white font-bold py-1 px-4 rounded-lg w-full my-3"
+            className="bg-sky-400 hover:bg-red-400 text-white font-bold py-1 px-4 rounded-lg w-full my-3 mt-6"
           >
             Login
           </button>
