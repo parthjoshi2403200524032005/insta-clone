@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import { SimpleLayout } from "../../layouts/SimpleLayout";
+import "../../App.css";
+import { useNavigate } from "react-router-dom";
+import HomeFeed from "../../pages/Home-Feed";
 
 function Search() {
-  const [isOpen, setIsOpen] = useState(true);
+  const [searchResults, setSearchResults] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const navigate = useNavigate();
 
   const handleInputChange = (e) => {
     setSearchTerm(e.target.value);
@@ -16,14 +20,12 @@ function Search() {
   return (
     <SimpleLayout>
       <div
-        className={`z-[9999] fixed top-0 left-0 h-full w-[400px] bg-[#000000] relative overflow-hidden  border-r border-gray-200 transform ${
-          isOpen ? "translate-x-[-100px]" : "translate-x-0"
-        } transition-transform duration-300 ease-in-out`}
+        className={`fixed top-0 left-0 h-full w-[400px] bg-[#000000] z-50 overflow-hidden border-r border-gray-200 ${
+          "translate-x-[-20px]" ? "translate-x-[255px]" : ""
+        }`}
       >
-        <div className="">
-          <h1 className="text-[20px] font-bold ml-[20px] mt-[20px] mb-[30px]">
-            Search
-          </h1>
+        <div className="p-4">
+          <h1 className="text-lg font-bold mb-4">Search</h1>
 
           <div className="relative mt-4">
             <input
@@ -31,13 +33,13 @@ function Search() {
               placeholder="Search"
               value={searchTerm}
               onChange={handleInputChange}
-              className=" p-2 pl-10 rounded-lg bg-[#262626] text-white w-[360px] ml-[5px]"
+              className="p-2 pl-10 rounded-lg bg-gray-800 text-white w-full"
             />
-            <div className="absolute left-[10px] flex items-center pl-3 top-[13px]">
+            <div className="absolute left-3 top-3 flex items-center pl-3">
               {searchTerm ? (
                 <svg
                   onClick={clearSearch}
-                  className="w-4 h-4 text-gray-500 cursor-pointer "
+                  className="w-4 h-4 text-gray-500 cursor-pointer"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -50,7 +52,7 @@ function Search() {
               ) : (
                 <svg
                   aria-label="Search"
-                  className="w-4 h-4  text-gray-500"
+                  className="w-4 h-4 text-gray-500"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -77,7 +79,7 @@ function Search() {
                 </svg>
               )}
             </div>
-            <hr className="mt-[30px]" />
+            <hr className="mt-4" />
             <div className="mt-4">
               {/* Example of search results */}
               <div className="flex items-center p-2">
@@ -93,6 +95,12 @@ function Search() {
               </div>
             </div>
           </div>
+        </div>
+        <div
+          className="absolute top-0 right-0 p-4 cursor-pointer hover:text-red-500"
+          onClick={() => navigate(-1)}
+        >
+          Back
         </div>
       </div>
     </SimpleLayout>

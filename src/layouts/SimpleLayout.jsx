@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 export const SimpleLayout = ({ children }) => {
   return (
-    <div className=" bg-[#000000] m-0 h-[100vh] w-[100%] text-[#F5F5F5]">
-      <main>
+    <div className=" bg-[#000000] m-0 h-screen w-full text-[#F5F5F5]">
+      <main >
         <div
           style={{
             display: "flex",
